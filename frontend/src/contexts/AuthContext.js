@@ -13,7 +13,6 @@ export const useAuth = () =>{
 export  function AuthProvider({children}) {
     // Initialize Firebase
     const auth = getAuth(app);
-    console.log(auth)
     const [currentUser, setCurrentUser] = useState();
     const [loading, setLoading] = useState(true);
 
