@@ -14,7 +14,6 @@ export  function AuthProvider({children}) {
     // Initialize Firebase
     const auth = getAuth(app);
     console.log(auth)
-
     const [currentUser, setCurrentUser] = useState();
     const [loading, setLoading] = useState(true);
 
@@ -34,10 +33,10 @@ export  function AuthProvider({children}) {
             // } 
         })
         return unsubscribe;
-    }, [])
+    }, [auth])
     const addUserToMongo = async(email) =>{
         console.log(email)
-        await fetch("/create-user",{
+        await fetch("/create",{
             method: "POST",
             headers: {
                 'Accept': 'application/json',
